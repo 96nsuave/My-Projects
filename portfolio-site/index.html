@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michael | Portfolio</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+   <link rel="stylesheet" href="css/style.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body>
+    <!-- ======= NAVBAR ======= -->
+    <nav class="navbar">
+      <div class="logo">Project<span> S4RAPHIM</span></div>
+
+      <ul class="nav-links">
+        <li>
+          <a href="#hero" class="active"><i data-lucide="home"></i> Home</a>
+        </li>
+        <li>
+          <a href="#projects"><i data-lucide="folder"></i> Projects</a>
+        </li>
+        <li>
+          <a href="#contact"><i data-lucide="mail"></i> Contact</a>
+        </li>
+      </ul>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- ======= HERO ======= -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <h1>Hi, I’m <span>Michael</span></h1>
+        <p>
+          A creative web developer passionate about sleek design and
+          performance.
+        </p>
+        <a href="#projects" class="cta">View My Work</a>
+      </div>
+    </section>
+
+    <!-- ======= PROJECTS ======= -->
+    <section class="projects" id="projects">
+      <h2>My Projects</h2>
+
+      <div class="project-category">
+        <h3>🌐 Websites</h3>
+        <div class="project-grid">
+          <div class="project-card fade-up">
+            <h4>Personal Portfolio</h4>
+            <p>
+              A responsive and minimal portfolio showcasing my design and coding
+              skills.
+            </p>
+          </div>
+          <div class="project-card fade-up">
+            <h4>Brand Landing Page</h4>
+            <p>A modern landing page layout for brand storytelling.</p>
+          </div>
+          <div class="project-card fade-up">
+            <h4>Agency Web App</h4>
+            <p>A dashboard UI for a digital creative agency.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-category">
+        <h3>🧠 AI-Assisted Workflows</h3>
+        <div class="project-grid">
+          <div class="project-card fade-up">
+            <h4>AI Chat Assistant UI</h4>
+            <p>An elegant user interface for a conversational AI assistant.</p>
+          </div>
+          <div class="project-card fade-up">
+            <h4>Prompt Design Collection</h4>
+            <p>Creative prompt engineering templates for design and writing.</p>
+          </div>
+          <div class="project-card fade-up">
+            <h4>AI Art Workflow</h4>
+            <p>Automating creative visuals through AI-assisted processes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-category">
+        <h3>📝 Written Articles</h3>
+        <div class="project-grid">
+          <div class="project-card fade-up">
+            <h4>Understanding Design Psychology</h4>
+            <p>Exploring how human behavior affects design decisions.</p>
+          </div>
+          <div class="project-card fade-up">
+            <h4>Philosophy of Creativity</h4>
+            <p>A reflective piece on the spiritual essence of creativity.</p>
+          </div>
+          <div class="project-card fade-up">
+            <h4>Modern Tech & Society</h4>
+            <p>How technology reshapes our sense of identity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= CONTACT ======= -->
+    <section class="contact" id="contact">
+      <h2>Contact Me</h2>
+      <p>Got a project or collaboration in mind? Let’s connect.</p>
+
+      <div class="social-links">
+        <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="glow"
+          ><i data-lucide="message-circle"></i
+        ></a>
+        <a href="mailto:youremail@gmail.com" class="glow"
+          ><i data-lucide="mail"></i
+        ></a>
+        <a href="https://twitter.com/yourhandle" target="_blank" class="glow"
+          ><i data-lucide="twitter"></i
+        ></a>
+        <a href="https://yourname.substack.com" target="_blank" class="glow"
+          ><i data-lucide="newspaper"></i
+        ></a>
+        <a href="https://github.com/yourgithub" target="_blank" class="glow"
+          ><i data-lucide="github"></i
+        ></a>
+      </div>
+    </section>
+
+    <!-- ======= FOOTER ======= -->
+    <footer class="footer">
+      <p>© 2025 Developed by <span>S4RAPHIM</span>.</p>
+    </footer>
+
+    <!-- ======= JS ======= -->
+    <script>
+      lucide.createIcons();
+
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.querySelector(".nav-links");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("open");
+        navLinks.classList.toggle("active");
+      });
+
+      // Fade-up animation
+      const fadeElems = document.querySelectorAll(".fade-up");
+
+      const appearOnScroll = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      fadeElems.forEach((elem) => appearOnScroll.observe(elem));
+    </script>
+  </body>
+</html>
