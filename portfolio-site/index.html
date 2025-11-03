@@ -1,177 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Michael | Portfolio</title>
 
     <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
 
-   <link rel="stylesheet" href="css/style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
-
   <body>
-    <!-- ======= NAVBAR ======= -->
+    <!-- scroll progress -->
+    <div id="scroll-progress"></div>
+
+    <!-- NAV -->
     <nav class="navbar">
       <div class="logo">Project<span> S4RAPHIM</span></div>
 
       <ul class="nav-links">
-        <li>
-          <a href="#hero" class="active"><i data-lucide="home"></i> Home</a>
-        </li>
-        <li>
-          <a href="#projects"><i data-lucide="folder"></i> Projects</a>
-        </li>
-        <li>
-          <a href="#contact"><i data-lucide="mail"></i> Contact</a>
-        </li>
+        <li><a href="#hero" class="active"><i data-lucide="home"></i> Home</a></li>
+        <li><a href="#projects"><i data-lucide="folder"></i> Projects</a></li>
+        <li><a href="#contact"><i data-lucide="mail"></i> Contact</a></li>
       </ul>
 
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="controls">
+        <div class="hamburger" id="hamburger" aria-label="Open menu" role="button" tabindex="0">
+          <span></span><span></span><span></span>
+        </div>
       </div>
     </nav>
 
-    <!-- ======= HERO ======= -->
-    <section class="hero" id="hero">
-      <div class="hero-content">
-        <h1>Hi, I’m <span>Michael</span></h1>
-        <p>
-          A creative web developer passionate about sleek design and
-          performance.
-        </p>
-        <a href="#projects" class="cta">View My Work</a>
+    <!-- HERO -->
+    <section class="hero fade-up" id="hero">
+      <div>
+        <h1>Hi, I'm <span>Michael</span></h1>
+        <p>A creative web developer passionate about sleek design and performance.</p>
+        <div class="cta-container">
+          <a href="#projects" class="cta">View My Work</a>
+        </div>
       </div>
     </section>
 
-    <!-- ======= PROJECTS ======= -->
+    <!-- HOMEPAGE CATEGORY TILES (2x2 slides) -->
+    <section class="category-tiles fade-up" id="home-tiles" aria-hidden="false">
+      <div class="tile" data-category="ai">
+        <div class="tile-header"><h3>AI Workflows</h3></div>
+        <div class="tile-slideshow" data-slides='[
+          {"label":"AI Art","bg":"linear-gradient(135deg,#071019,#001017)"},
+          {"label":"Automation","bg":"linear-gradient(135deg,#001017,#001622)"},
+          {"label":"Prompt Eng.","bg":"linear-gradient(135deg,#001622,#071019)"}
+        ]'></div>
+      </div>
+
+      <div class="tile" data-category="la-scala">
+        <div class="tile-header"><h3>La Scala</h3></div>
+        <div class="tile-slideshow" data-slides='[
+          {"label":"Hitpost Montage","bg":"linear-gradient(135deg,#071017,#001f1f)"},
+          {"label":"Smartphone Cine","bg":"linear-gradient(135deg,#001f1f,#04121a)"},
+          {"label":"SuaveKindaTalks","bg":"linear-gradient(135deg,#04121a,#071017)"}
+        ]'></div>
+      </div>
+
+      <div class="tile" data-category="pm">
+        <div class="tile-header"><h3>Project Mgt.</h3></div>
+        <div class="tile-slideshow" data-slides='[
+          {"label":"TaskFlow","bg":"linear-gradient(135deg,#001017,#00202a)"},
+          {"label":"Team Hub","bg":"linear-gradient(135deg,#00202a,#001017)"},
+          {"label":"Time Metrics","bg":"linear-gradient(135deg,#001417,#001017)"}
+        ]'></div>
+      </div>
+
+      <div class="tile" data-category="webdev">
+        <div class="tile-header"><h3>Web Dev</h3></div>
+        <div class="tile-slideshow" data-slides='[
+          {"label":"Portfolio Site","bg":"linear-gradient(135deg,#000a10,#00121a)"},
+          {"label":"Agency Landing","bg":"linear-gradient(135deg,#00121a,#001017)"},
+          {"label":"Dashboard App","bg":"linear-gradient(135deg,#001017,#000a10)"}
+        ]'></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS (filtered by category; NO "All") -->
     <section class="projects" id="projects">
       <h2>My Projects</h2>
 
-      <div class="project-category">
-        <h3>🌐 Websites</h3>
-        <div class="project-grid">
-          <div class="project-card fade-up">
-            <h4>Personal Portfolio</h4>
-            <p>
-              A responsive and minimal portfolio showcasing my design and coding
-              skills.
-            </p>
-          </div>
-          <div class="project-card fade-up">
-            <h4>Brand Landing Page</h4>
-            <p>A modern landing page layout for brand storytelling.</p>
-          </div>
-          <div class="project-card fade-up">
-            <h4>Agency Web App</h4>
-            <p>A dashboard UI for a digital creative agency.</p>
-          </div>
-        </div>
+      <div class="categories">
+        <button class="active" data-category="ai">AI Workflows</button>
+        <button data-category="la-scala">La Scala</button>
+        <button data-category="pm">Project Mgt.</button>
+        <button data-category="webdev">Web Dev</button>
       </div>
 
-      <div class="project-category">
-        <h3>🧠 AI-Assisted Workflows</h3>
-        <div class="project-grid">
-          <div class="project-card fade-up">
-            <h4>AI Chat Assistant UI</h4>
-            <p>An elegant user interface for a conversational AI assistant.</p>
-          </div>
-          <div class="project-card fade-up">
-            <h4>Prompt Design Collection</h4>
-            <p>Creative prompt engineering templates for design and writing.</p>
-          </div>
-          <div class="project-card fade-up">
-            <h4>AI Art Workflow</h4>
-            <p>Automating creative visuals through AI-assisted processes.</p>
-          </div>
+      <div class="project-grid">
+        <!-- AI -->
+        <div class="project-card fade-up" data-category="ai" data-type="image" data-media="">
+          <a href="projects/ai-art.html">
+            <h4>AI Art</h4>
+            <p>Creative visuals built with generative AI and design automation.</p>
+          </a>
         </div>
-      </div>
 
-      <div class="project-category">
-        <h3>📝 Written Articles</h3>
-        <div class="project-grid">
-          <div class="project-card fade-up">
-            <h4>Understanding Design Psychology</h4>
-            <p>Exploring how human behavior affects design decisions.</p>
-          </div>
-          <div class="project-card fade-up">
-            <h4>Philosophy of Creativity</h4>
-            <p>A reflective piece on the spiritual essence of creativity.</p>
-          </div>
-          <div class="project-card fade-up">
-            <h4>Modern Tech & Society</h4>
-            <p>How technology reshapes our sense of identity.</p>
-          </div>
+        <div class="project-card fade-up" data-category="ai" data-type="image" data-media="">
+          <a href="projects/automation.html">
+            <h4>Automation</h4>
+            <p>Streamlined workflows integrating AI tools for speed and precision.</p>
+          </a>
+        </div>
+
+        <div class="project-card fade-up" data-category="ai" data-type="image" data-media="">
+          <a href="projects/prompt-engineering.html">
+            <h4>Prompt Engineering</h4>
+            <p>Effective prompt structures for AI creativity and productivity.</p>
+          </a>
+        </div>
+
+        <!-- LA SCALA -->
+        <div class="project-card fade-up" data-category="la-scala" data-type="video" data-media="">
+          <a href="projects/hitpost-montage.html">
+            <h4>Hitpost Montage</h4>
+            <p>Dynamic short-form montage highlighting storytelling through rhythm.</p>
+          </a>
+        </div>
+
+        <div class="project-card fade-up" data-category="la-scala" data-type="image" data-media="">
+          <a href="projects/smartphone-cinematography.html">
+            <h4>Smartphone Cinematography</h4>
+            <p>Professional-grade visuals shot and edited entirely on mobile.</p>
+          </a>
+        </div>
+
+        <div class="project-card fade-up" data-category="la-scala" data-type="image" data-media="">
+          <a href="projects/suavekindatalks.html">
+            <h4>SuaveKindaTalks</h4>
+            <p>Creative talk series exploring design, creativity, and human insight.</p>
+          </a>
+        </div>
+
+        <div class="project-card fade-up" data-category="la-scala" data-type="image" data-media="">
+          <a href="projects/writing.html">
+            <h4>Writing</h4>
+            <p>Personal essays and reflective writing on art, philosophy, and tech.</p>
+          </a>
+        </div>
+
+        <!-- PROJECT MANAGEMENT -->
+        <div class="project-card fade-up" data-category="pm" data-type="image" data-media="">
+          <a href="projects/taskflow-dashboard.html">
+            <h4>TaskFlow Dashboard</h4>
+            <p>Visual project tracker for team productivity and workflow optimization.</p>
+          </a>
+        </div>
+
+        <div class="project-card fade-up" data-category="pm" data-type="image" data-media="">
+          <a href="projects/team-collab-hub.html">
+            <h4>Team Collab Hub</h4>
+            <p>Centralized workspace for managing creative and tech projects.</p>
+          </a>
+        </div>
+
+        <div class="project-card fade-up" data-category="pm" data-type="image" data-media="">
+          <a href="projects/time-metrics.html">
+            <h4>Time Metrics System</h4>
+            <p>Analytical overview of time allocation across active projects.</p>
+          </a>
+        </div>
+
+        <!-- WEB DEV -->
+        <div class="project-card fade-up" data-category="webdev" data-type="image" data-media="">
+          <a href="projects/portfolio-site.html">
+            <h4>Portfolio Site</h4>
+            <p>Fully responsive web portfolio showcasing sleek design and animation.</p>
+          </a>
+        </div>
+
+        <div class="project-card fade-up" data-category="webdev" data-type="image" data-media="">
+          <a href="projects/agency-landing.html">
+            <h4>Agency Landing Page</h4>
+            <p>Clean layout optimized for conversions and storytelling.</p>
+          </a>
+        </div>
+
+        <div class="project-card fade-up" data-category="webdev" data-type="image" data-media="">
+          <a href="projects/dashboard.html">
+            <h4>Dashboard App</h4>
+            <p>Interactive dashboard for analytics and real-time performance tracking.</p>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ======= CONTACT ======= -->
+    <!-- CONTACT -->
     <section class="contact" id="contact">
       <h2>Contact Me</h2>
       <p>Got a project or collaboration in mind? Let’s connect.</p>
 
       <div class="social-links">
-        <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="glow"
-          ><i data-lucide="message-circle"></i
-        ></a>
-        <a href="mailto:youremail@gmail.com" class="glow"
-          ><i data-lucide="mail"></i
-        ></a>
-        <a href="https://twitter.com/yourhandle" target="_blank" class="glow"
-          ><i data-lucide="twitter"></i
-        ></a>
-        <a href="https://yourname.substack.com" target="_blank" class="glow"
-          ><i data-lucide="newspaper"></i
-        ></a>
-        <a href="https://github.com/yourgithub" target="_blank" class="glow"
-          ><i data-lucide="github"></i
-        ></a>
+        <a href="https://wa.me/234XXXXXXXXXX" target="_blank"><i data-lucide="message-circle"></i></a>
+        <a href="mailto:youremail@gmail.com"><i data-lucide="mail"></i></a>
+        <a href="https://twitter.com/yourhandle" target="_blank"><i data-lucide="twitter"></i></a>
+        <a href="https://yourname.substack.com" target="_blank"><i data-lucide="newspaper"></i></a>
+        <a href="https://github.com/yourgithub" target="_blank"><i data-lucide="github"></i></a>
       </div>
     </section>
 
-    <!-- ======= FOOTER ======= -->
+    <!-- FOOTER -->
     <footer class="footer">
       <p>© 2025 Developed by <span>S4RAPHIM</span>.</p>
+      <div id="visitor-counter" style="margin-top:10px; color:#00e0ff; font-size:0.9rem;">
+  Visitors: <span id="visitor-count">Loading...</span>
+</div>
     </footer>
 
-    <!-- ======= JS ======= -->
-    <script>
-      lucide.createIcons();
+    <!-- PROJECT MODAL -->
+    <div class="modal" id="project-modal" aria-hidden="true">
+      <div class="modal-content fade-up">
+        <span class="close-modal" title="Close">&times;</span>
+        <div class="media-preview">
+          <img id="modal-image" src="" alt="Project Preview" />
+          <video id="modal-video" controls loop muted></video>
+        </div>
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+        <a id="modal-link" href="#" target="_blank" class="cta">Visit Project</a>
+      </div>
+    </div>
 
-      const hamburger = document.getElementById("hamburger");
-      const navLinks = document.querySelector(".nav-links");
-
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("open");
-        navLinks.classList.toggle("active");
-      });
-
-      // Fade-up animation
-      const fadeElems = document.querySelectorAll(".fade-up");
-
-      const appearOnScroll = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
-
-      fadeElems.forEach((elem) => appearOnScroll.observe(elem));
-    </script>
+    <!-- JS -->
+    <script src="js/script.js"></script>
   </body>
-</html>
+</html> 
